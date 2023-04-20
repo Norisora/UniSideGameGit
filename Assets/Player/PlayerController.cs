@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
     float axisH = 0.0f;
     public float speed = 3.0f;
 
+    public float jump = 9.0f;       //ジャンプ力
+    public LayerMask groundLayer;   //着地できるレイヤー
+    bool goJump = false;            //ジャンプ開始フラグ
+    bool onGround = false;          //地面に立っているフラグ
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,8 @@ public class PlayerController : MonoBehaviour
             Debug.Log("左移動");
             transform.localScale = new Vector2(-1, 1);  //左右反転させる
         }
+
+        
     }
 
     private void FixedUpdate()
