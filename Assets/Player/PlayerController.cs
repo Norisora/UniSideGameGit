@@ -37,13 +37,38 @@ public class PlayerController : MonoBehaviour
             Debug.Log("左移動");
             transform.localScale = new Vector2(-1, 1);  //左右反転させる
         }
-
-        
+        //キャラクターをジャンプさせる
+        if (Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
     }
 
     private void FixedUpdate()
     {
-        //速度を更新する
-        rbody.velocity = new Vector2(speed * axisH * 3.0f, rbody.velocity.y);
+        //地上判定
+        onGround = Physics2D.Linecast(transform.position,
+                                        transform.position - (transform.up * 0.1f),
+                                        groundLayer);
+        if (onGround || axisH != 0)
+        {
+            //速度を更新する
+            rbody.velocity = new Vector2(speed * axisH * 3.0f, rbody.velocity.y);
+        }
+        if (onGround && goJump)
+        {
+            //地上でジャンプキーが押された
+            //ジャンプさせる
+            Debug.Log("ジャンプ！");
+            Vector2 jumpPw = new Vector2(0, jump);          //ジャンプさせるベクトルをつくる
+            rbody.AddForce(jumpPw, ForceMode2D.Impulse);    //瞬間的な力を加える
+            goJump = false; //ジャンプフラグを下す
+        }
+    }
+    //ジャンプ
+    public void Jump() 
+    {
+        goJump = true;
+        Debug.Log("ジャンプボタンが押された");
     }
 }
