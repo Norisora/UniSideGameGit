@@ -28,14 +28,33 @@ public class GameManager : MonoBehaviour
         if (PlayerController.gameState == "gameclear")
         {
             //ゲームクリア
-            mainImage.SetActive(true);      //画像を表示する
-            panel.SetActive(false);
-            //RESTARTボタンを無効化する
+            //まずRESTARTボタンを無効化する（ボタンが一瞬アクティブに見えるため）
             Button bt = restartButton.GetComponent<Button>();
             bt.interactable = false;
+            mainImage.SetActive(true);      //画像を表示する
+            panel.SetActive(true);
             mainImage.GetComponent<Image>().sprite = gameClearSpr;  //画像を設定する
             PlayerController.gameState = "gameend";
         }
-
+        else if (PlayerController.gameState == "gameover")
+        {
+            //ゲームオーバー
+            //NEXTボタンを無効化する
+            Button bt = nextButton.GetComponent<Button>();
+            bt.interactable = false;
+            mainImage.SetActive(true);      //画像を表示する
+            panel.SetActive(true);
+            mainImage.GetComponent<Image>().sprite = gameOverSpr;
+            PlayerController.gameState = "gameend";
+        }
+        else if (PlayerController.gameState == "playing")
+        {
+            //ゲーム中
+        }
+    }
+    //画像を非表示にする
+    void InactiveImage()
+    {
+        mainImage.SetActive(false);
     }
 }
