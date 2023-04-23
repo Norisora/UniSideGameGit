@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour
     string nowAnime = "";
     string oldAnime = "";
 
+    public static string gameState = "playing"; //ゲームの状態
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +33,17 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         nowAnime = stopAnime;
         oldAnime = stopAnime;
+
+        gameState = "playing";  //ゲーム中にする
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (gameState != "playing")
+        {
+            return;
+        }
         //水平方向の入力をチェックする
         axisH = Input.GetAxisRaw("Horizontal");
         //向きの調整
@@ -60,6 +68,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (gameState != "playing")
+        { 
+            return; 
+        }
         //地上判定
         onGround = Physics2D.Linecast(transform.position,
                                         transform.position - (transform.up * 0.1f),
@@ -124,10 +136,31 @@ public class PlayerController : MonoBehaviour
     public void Goal()
     {
         animator.Play(goalAnime);
+
+        gameState = "gameclear";
+        GameStop(); //ゲーム停止
     }
     //ゲームオーバー
     public void GameOver()
     {
         animator.Play(deadAnime);
+
+        gameState = "gameover";
+        GameStop(); //ゲーム停止
+        //====
+        //ゲームオーバー演出
+        //====
+        //プレイヤー当たりを消す
+        GetComponent<CapsuleCollider2D>().enabled = false;
+        //プレイヤーを少し上にはね上げる演出
+        rbody.AddForce(new Vector2(0, 5), ForceMode2D.Impulse);
+    }
+    //ゲーム停止
+    void GameStop()
+    {
+        //Rigidbody2Dを取ってくる
+        Rigidbody2D rbody = GetComponent<Rigidbody2D>();
+        //速度を0にして強制停止
+        rbody.velocity = new Vector2(0, 0);
     }
 }
