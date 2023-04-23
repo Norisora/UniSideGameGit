@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
     public GameObject nextButton;
 
     Image titleImage;       //画像を表示しているImageコンポーネント
+
+    // +++ 時間制限追加 +++
+    public GameObject timeBar;
     // Start is called before the first frame update
     void Start()
     {
