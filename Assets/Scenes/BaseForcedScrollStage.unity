@@ -1436,16 +1436,50 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2470866372284102023, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470866372284102023, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470866372284102023, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.000011444
+      objectReference: {fileID: 0}
+    - target: {fileID: 2470866372284102023, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.000019073
+      objectReference: {fileID: 0}
     - target: {fileID: 2953528564684786165, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 3542711462305981400, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+      propertyPath: timeBar
+      value: 
+      objectReference: {fileID: 6362850985115447690}
+    - target: {fileID: 3542711462305981400, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 6362850985115447689}
     - target: {fileID: 8207199664623600430, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
       propertyPath: gameTime
-      value: 60
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+--- !u!1 &6362850985115447689 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1452677240650619438, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+  m_PrefabInstance: {fileID: 6362850985115447688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6362850985115447690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2226438073558708672, guid: be4a659b84a63044f981aa268d0b181b, type: 3}
+  m_PrefabInstance: {fileID: 6362850985115447688}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7234250147191138287
 PrefabInstance:
   m_ObjectHideFlags: 0
