@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovindBlock : MonoBehaviour
+public class ItemData1 : MonoBehaviour
 {
-    public float moveX = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
