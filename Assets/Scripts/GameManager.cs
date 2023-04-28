@@ -28,6 +28,10 @@ public class GameManager : MonoBehaviour
     // +++ サウンド再生追加 +++
     public AudioClip meGameOver;    //ゲームオーバー
     public AudioClip meGameClear;   //ゲームクリア
+
+    // +++ プレイヤー操作 +++
+    public GameObject inputUI;      //操作UIパネル
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +92,9 @@ public class GameManager : MonoBehaviour
                 soundPlayer.Stop();
                 soundPlayer.PlayOneShot(meGameClear);
             }
+
+            // +++ プレイヤー操作 +++
+            inputUI.SetActive(false);       //操作UIを隠す
         }
         else if (PlayerController.gameState == "gameover")
         {
@@ -159,5 +166,14 @@ public class GameManager : MonoBehaviour
     {
         int score = stageScore + totalScore;
         scoreText.GetComponent<Text>().text = score.ToString();
+    }
+
+    // +++ プレイヤー操作 +++
+    //ジャンプ
+    public void Jump()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        PlayerController playerCnt = player.GetComponent <PlayerController>();
+        playerCnt.Jump();
     }
 }
