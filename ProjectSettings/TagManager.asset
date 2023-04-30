@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Goal
+  - Dead
+  - ScoreItem
+  - Switch
   layers:
   - Default
   - TransparentFX
@@ -15,7 +18,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Shell
   - 
   - 
   - 
