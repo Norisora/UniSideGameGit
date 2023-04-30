@@ -55,8 +55,7 @@ public class PlayerController : MonoBehaviour
             //水平移動の入力をチェックする
             axisH = Input.GetAxisRaw("Horizontal");
         }
-        //水平方向の入力をチェックする
-        axisH = Input.GetAxisRaw("Horizontal");
+
         //向きの調整
         if (axisH > 0.0f)
         {
@@ -197,6 +196,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             isMoving = true;
+            Debug.Log(isMoving);
         }
     }
 }
