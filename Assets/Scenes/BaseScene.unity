@@ -1622,6 +1622,10 @@ PrefabInstance:
       propertyPath: jump
       value: 8.5
       objectReference: {fileID: 0}
+    - target: {fileID: 5304676737537983931, guid: 3dc1bb817b87ce446acc74f5bc011ebd, type: 3}
+      propertyPath: canDead
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dc1bb817b87ce446acc74f5bc011ebd, type: 3}
 --- !u!1001 &6362850985115447688

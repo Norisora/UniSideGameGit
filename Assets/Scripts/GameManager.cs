@@ -169,7 +169,7 @@ public class GameManager : MonoBehaviour
     }
 
     // +++ プレイヤー操作 +++
-    //ジャンプ
+    //ジャンプ(UIボタン押下)
     public void Jump()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");

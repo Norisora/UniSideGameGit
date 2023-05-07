@@ -11,13 +11,6 @@ public class ShellController : MonoBehaviour
     {
         Destroy(gameObject, deleteTime);        //íœİ’è
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Destroy(gameObject);        //  ‰½‚©‚ÉÚG‚µ‚½‚çÁ‚·

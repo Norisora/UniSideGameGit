@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //============デバッグ機能=============
+    public bool cantDie = false;
+    //=====================================
+
     Rigidbody2D rbody;
     float axisH = 0.0f;
     public float speed = 3.0f;
@@ -164,6 +168,7 @@ public class PlayerController : MonoBehaviour
     //ゲームオーバー
     public void GameOver()
     {
+        if (cantDie) return;
         animator.Play(deadAnime);
 
         gameState = "gameover";
